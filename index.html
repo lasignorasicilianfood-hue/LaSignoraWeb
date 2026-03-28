@@ -96,17 +96,48 @@
     <section id="hero" class="hero section light-background">
 
       <div class="container">
-        <div class="row gy-4 justify-content-center justify-content-lg-between">
-          <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up">Taste the true flavors of Sicily and the best of Italian tradition.</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Traditional Sicilian flavors and Italian classics, made the way they should be.</p>
-            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-              <!--<a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>-->
+        <div class="swiper init-swiper hero-swiper" data-aos="fade-up" data-aos-delay="100">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 6000
+              },
+              "slidesPerView": 1,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+
+          <div class="swiper-wrapper">
+            <div class="swiper-slide hero-item" style="background-image: url('assets/img/hero-img.png')">
+              <div class="hero-card">
+                <span class="hero-card-tag">Sicilian Classics</span>
+                <h1 data-aos="fade-up">Taste the true flavors of Sicily</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Traditional Sicilian flavors and Italian classics, made the way they should be</p>
+                <div class="hero-card-actions" data-aos="fade-up" data-aos-delay="200">
+                  <a href="#menu" class="btn-get-started">See Our Menu</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide hero-item" style="background-image: url('assets/img/hero-img.png')">
+              <div class="hero-card">
+                <span class="hero-card-tag">New Announcement</span>
+                <h1 data-aos="fade-up">Pagina 2 con una nuova news</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Descrizione della nuova news</p>
+                <div class="hero-card-actions" data-aos="fade-up" data-aos-delay="200">
+                  <a href="#menu" class="btn-get-started">Scopri il Menu</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-          </div>
+
+          <div class="swiper-pagination"></div>
         </div>
       </div>
 
