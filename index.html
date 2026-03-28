@@ -470,84 +470,112 @@
 
       <div class="container">
 
-        <div class="row gy-4">
+        <div class="swiper init-swiper" data-aos="fade-up" data-aos-delay="100">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 1,
+              "spaceBetween": 40,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "768": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 30
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 30
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
 
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/chefs/location-1.png" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            <div class="swiper-slide d-flex">
+              <div class="team-member d-flex flex-column align-items-stretch h-100">
+                <div class="member-img">
+                  <img src="assets/img/chefs/location-1.png" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Cathedral Park Food Carts</h4>
+                  <span>Main Store</span>
+                  <p>7431 NORTH ST. LOUIS AVE. PORTLAND, OR<br>Nestled in the St. John's neighborhood just 6 Blocks from Cathedral Park and 3 Blocks from Downtown. Located on the corner of North St. Louis & Kellogg Street.</p>
                 </div>
               </div>
-              <div class="member-info">
-                <h4>Cathedral Park Food Carts</h4>
-                <span>Main Store</span>
-                <p>7431 NORTH ST. LOUIS AVE. PORTLAND, OR<br>Nestled in the St. John's neighborhood just 6 Blocks from Cathedral Park and 3 Blocks from Downtown. Located on the corner of North St. Louis & Kellogg Street.</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
+            </div><!-- End Location Slide -->
 
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/chefs/location-4.png" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            <div class="swiper-slide d-flex">
+              <div class="team-member d-flex flex-column align-items-stretch h-100">
+                <div class="member-img">
+                  <img src="assets/img/chefs/location-4.png" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Vancouver Farmers Market</h4>
+                  <span>Main Store</span>
+                  <p>8TH & ESTHER ST. VANCOUVER, WA<br>Operating since 1990, the market runs year-round in the heart of downtown Vancouver next to Esther Short Park</p>
                 </div>
               </div>
-              <div class="member-info">
-                <h4>Vancouver Farmers Market</h4>
-                <span>Main Store</span>
-                <p>8TH & ESTHER ST. VANCOUVER, WA<br>Operating since 1990, the market runs year-round in the heart of downtown Vancouver next to Esther Short Park</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
+            </div><!-- End Location Slide -->
 
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/chefs/location-2.png" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            <div class="swiper-slide d-flex">
+              <div class="team-member d-flex flex-column align-items-stretch h-100">
+                <div class="member-img">
+                  <img src="assets/img/chefs/location-2.png" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Momma J's</h4>
+                  <span>Retail</span>
+                  <p>450 NW 257TH WAY, TROUTDALE, OR<br>Neighborhood retail partner in Troutdale offering a selection of our specialties.</p>
                 </div>
               </div>
-              <div class="member-info">
-                <h4>Momma J's</h4>
-                <span>Retail</span>
-                <p>450 NW 257TH WAY, TROUTDALE, OR<br>Neighborhood retail partner in Troutdale offering a selection of our specialties.</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
+            </div><!-- End Location Slide -->
 
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/chefs/location-3.png" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+            <div class="swiper-slide d-flex">
+              <div class="team-member d-flex flex-column align-items-stretch h-100">
+                <div class="member-img">
+                  <img src="assets/img/chefs/location-3.png" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Simply Coffee</h4>
+                  <span>Retail</span>
+                  <p>455 NE BURNSIDE RD, GRESHAM, OR<br>Local coffee spot in Gresham partnered with us to offer a curated selection of our products</p>
                 </div>
               </div>
-              <div class="member-info">
-                <h4>Simply Coffee</h4>
-                <span>Retail</span>
-                <p>455 NE BURNSIDE RD, GRESHAM, OR<br>Local coffee spot in Gresham partnered with us to offer a curated selection of our products</p>
-              </div>
-            </div>
-          </div><!-- End Chef Team Member -->
+            </div><!-- End Location Slide -->
 
+          </div>
         </div>
 
       </div>
