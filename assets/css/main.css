@@ -1335,6 +1335,17 @@ section,
   background-color: var(--accent-color);
 }
 
+.locations .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.locations .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
 /*--------------------------------------------------------------
 # Chefs Section
 --------------------------------------------------------------*/
