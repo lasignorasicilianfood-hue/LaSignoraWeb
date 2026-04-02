@@ -60,10 +60,16 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
+html {
+  overscroll-behavior: none;
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overscroll-behavior: none;
 }
 
 a {
@@ -222,11 +228,26 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+
+  padding: calc(20px + env(safe-area-inset-top)) 0 20px 0;
+
   transition: all 0.5s;
-  z-index: 997;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * env(safe-area-inset-top));
+  left: 0;
+  width: 100%;
+  height: env(safe-area-inset-top);
+  background: var(--background-color);
 }
 
 .header .logo {
@@ -798,7 +819,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 60vh;
+  min-height: 60dvh;
   position: relative;
   padding: 60px 0;
   display: flex;
