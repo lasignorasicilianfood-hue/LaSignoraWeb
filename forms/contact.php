@@ -29,11 +29,11 @@ if (
 }
 
 // Corpo email
-$email_content  = "Hai ricevuto un nuovo messaggio dal sito La Signora Sicilian Food:\n\n";
-$email_content .= "Nome: $name\n";
+$email_content  = "You have received a new message from the website La Signora:\n\n";
+$email_content .= "Name: $name\n";
 $email_content .= "Email: $email\n";
-$email_content .= "Oggetto: $subject\n\n";
-$email_content .= "Messaggio:\n$message\n";
+$email_content .= "Subject: $subject\n\n";
+$email_content .= "Message:\n$message\n";
 
 // Header email
 $headers  = "From: $name <$email>\r\n";
