@@ -1,41 +1,50 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+// CONFIGURAZIONE — cambia con la tua email
+$receiving_email_address = "info@lasignorafood.com";
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'info@lasignora.com';
+// Accetta solo POST
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    http_response_code(405);
+    echo "Method Not Allowed";
+    exit;
+}
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+// Sanitizzazione input
+$name    = strip_tags(trim($_POST["name"] ?? ""));
+$email   = filter_var(trim($_POST["email"] ?? ""), FILTER_SANITIZE_EMAIL);
+$subject = strip_tags(trim($_POST["subject"] ?? ""));
+$message = strip_tags(trim($_POST["message"] ?? ""));
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+// Validazione
+if (
+    empty($name) ||
+    empty($email) ||
+    empty($subject) ||
+    empty($message) ||
+    !filter_var($email, FILTER_VALIDATE_EMAIL)
+) {
+    http_response_code(400);
+    echo "Please fill all fields correctly.";
+    exit;
+}
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+// Corpo email
+$email_content  = "Hai ricevuto un nuovo messaggio dal sito La Signora Sicilian Food:\n\n";
+$email_content .= "Nome: $name\n";
+$email_content .= "Email: $email\n";
+$email_content .= "Oggetto: $subject\n\n";
+$email_content .= "Messaggio:\n$message\n";
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+// Header email
+$headers  = "From: $name <$email>\r\n";
+$headers .= "Reply-To: $email\r\n";
 
-  echo $contact->send();
+// Invio email
+if (mail($receiving_email_address, $subject, $email_content, $headers)) {
+    http_response_code(200);
+    echo "OK";
+} else {
+    http_response_code(500);
+    echo "Email sending failed.";
+}
 ?>
